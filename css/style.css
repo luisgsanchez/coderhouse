@@ -1,0 +1,322 @@
+/* === ESTILOS GENERALES PARA ABUELINK === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* === LAYOUT PRINCIPAL CON GRID === */
+.grid-contenedor {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.grid-item {
+  padding: 20px;
+}
+
+.header { grid-area: header; background-color: #ffffff; border-bottom: 2px solid #e0e0e0; }
+.main   { grid-area: main; }
+.footer { grid-area: footer; background-color: #ffffff; padding: 20px; text-align: center; border-top: 2px solid #e0e0e0; }
+
+/* === MENÚ ABUELINK === */
+.menu-abuelink, .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 15px 30px;
+}
+
+.lista-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.lista-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lista-menu li a:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.lista-menu li a.activo {
+  border-bottom: 2px solid #6a5acd;
+}
+
+/* === TITULOS === */
+h1, h2, h3 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* === PÁRRAFOS === */
+p {
+  text-align: center;
+  font-size: 1.1em;
+  margin: 20px 0;
+  color: #555;
+}
+
+/* === BOTÓN FLOTANTE DE WHATSAPP === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.whatsapp-float:hover {
+  background-color: #20b558;
+}
+
+/* === INDEX - LOGO Y FRASE === */
+.logo {
+  width: 200px;
+  margin-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frase {
+  font-size: 22px;
+  color: #333;
+  margin: 30px 0 80px;
+}
+
+.btn-descubre {
+  padding: 12px 25px;
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-descubre:hover {
+  background-color: #483d8b;
+}
+
+/* === BENEFICIOS - SECCIÓN Y GALERÍA === */
+.beneficios .contenido {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.beneficios .contenido h2 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.beneficios .contenido p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.beneficios-galeria {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.beneficios-galeria img {
+  width: 250px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.beneficios-galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* === ACOMPAÑAMIENTO === */
+.acompanamiento .contenido {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.acompanamiento .contenido h2 {
+  font-size: 28px;
+  color: #6a5acd;
+  margin-bottom: 20px;
+}
+
+.acompanamiento .contenido p {
+  font-size: 18px;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.grid-beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  justify-items: center;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 260px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.tarjeta img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.tarjeta p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* === MOTIVACIÓN === */
+.motivacion .motivacion-contenido {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.motivacion .motivacion-contenido h2 {
+  font-size: 28px;
+  color: #6a5acd;
+  margin-bottom: 20px;
+}
+
+.motivacion .motivacion-contenido p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.frase-motivacional {
+  margin-top: 30px;
+  font-style: italic;
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-left: 5px solid #6a5acd;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .grid-contenedor {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .lista-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .frase {
+    font-size: 18px;
+    margin: 20px 0 60px;
+  }
+
+  .beneficios .contenido h2 {
+    font-size: 22px;
+  }
+
+  .beneficios .contenido p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .beneficios-galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .beneficios-galeria img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .grid-beneficios {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+  }
+
+  .tarjeta {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+
