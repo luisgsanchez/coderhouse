@@ -2,132 +2,66 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contacto - AbueLink</title>
 
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Fuente y estilos -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    /* Menú igual que en las demás páginas */
-    .header, .nav {
-      background-color: #fff;
-      border-bottom: 2px solid #e0e0e0;
-    }
-
-    .lista-menu {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      padding: 15px 0;
-      margin: 0;
-    }
-
-    .lista-menu li {
-      margin: 0 20px;
-    }
-
-    .lista-menu a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #222;
-      font-size: 18px;
-    }
-
-    .lista-menu a.activo {
-      border-bottom: 2px solid #555;
-    }
-
-    /* Fondo solo en la parte del contenido */
-    .main {
-      background: url('../assets/abuelitos7.png') no-repeat center center;
-      background-size: cover;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    .contacto-container {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 40px 30px;
-      border-radius: 15px;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    .contacto-container h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .contacto-container p {
-      font-size: 18px;
-      color: #444;
-    }
-
-    .footer {
-      background-color: #fff;
-      border-top: 2px solid #e0e0e0;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 30px;
-      text-decoration: none;
-      z-index: 100;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
 </head>
 <body>
 
-  <div class="grid-contenedor">
+  <div class="container-fluid p-0">
     <!-- Header con menú -->
-    <header class="grid-item header">
-      <nav class="nav">
-        <ul class="lista-menu">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="beneficios.html">Beneficios</a></li>
-          <li><a href="acompañamiento.html">Acompañamiento</a></li>
-          <li><a href="motivacion.html">Motivación</a></li>
-          <li><a href="contactos.html" class="activo">Contacto</a></li>
-        </ul>
+    <header class="bg-white border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light container">
+        <a class="navbar-brand fw-bold" href="../index.html">AbueLink</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+          aria-controls="menu" aria-expanded="false" aria-label="Menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link active" href="beneficios.html">Beneficios</a></li>
+              <li class="nav-item"><a class="nav-link" href="acompañamiento.html">Acompañamiento</a></li>
+              <li class="nav-item"><a class="nav-link" href="motivacion.html">Motivación</a></li>
+              <li class="nav-item"><a class="nav-link" href="contactos.html">Contacto</a></li>
+            </ul>
+        </div>
       </nav>
     </header>
 
     <!-- Contenido con imagen de fondo -->
-    <main class="grid-item main">
-      <section class="contacto-container">
-        <h2>¿Te gustaría conocer más sobre AbueLink?</h2>
-        <p>Contáctanos y te contaremos todo lo que necesitas saber para empezar a usar nuestra plataforma.</p>
+    <main class="d-flex align-items-center justify-content-center text-center"
+      style="background: url('../assets/abuelitos7.png') no-repeat center center; background-size: cover; min-height: 70vh;">
+      <section class="bg-white bg-opacity-75 p-5 rounded shadow-lg" style="max-width: 600px;">
+        <h2 class="mb-3">¿Te gustaría conocer más sobre AbueLink?</h2>
+        <p class="fs-5">Contáctanos y te contaremos todo lo que necesitas saber para empezar a usar nuestra plataforma.</p>
       </section>
     </main>
 
-    <!-- Botón WhatsApp -->
-    <a class="whatsapp-float" href="https://wa.me/57XXXXXXXXXX" target="_blank" title="Chatea por WhatsApp">
+    <!-- Botón WhatsApp flotante -->
+    <a class="position-fixed bottom-0 end-0 m-4 fs-1 text-decoration-none" 
+       href="https://wa.me/57XXXXXXXXXX" target="_blank" title="Chatea por WhatsApp">
       💬
     </a>
 
     <!-- Footer -->
-    <footer class="grid-item footer">
+    <footer class="bg-white border-top text-center py-4">
       <h3>Contactar por WhatsApp</h3>
       <a href="https://wa.me/57XXXXXXXXXX" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 45px;">
       </a>
-      <p>AbueLink - Tecnología con corazón para personas mayores</p>
+      <p class="mt-2 mb-0">AbueLink - Tecnología con corazón para personas mayores</p>
     </footer>
   </div>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
