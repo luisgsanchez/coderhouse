@@ -1,0 +1,363 @@
+/* === VARIABLES === */
+$font-main: 'Roboto', sans-serif;
+$color-fondo: #f0f0f0;
+$color-blanco: #ffffff;
+$color-gris: #e0e0e0;
+$color-texto: #333;
+$color-secundario: #555;
+$color-morado: #6a5acd;
+$color-morado-oscuro: #483d8b;
+$color-whatsapp: #25D366;
+$color-whatsapp-hover: #20b558;
+
+/* === MIXINS === */
+@mixin transition($props...) {
+  transition: $props;
+}
+
+@mixin sombra($x: 0, $y: 4px, $blur: 10px, $color: rgba(0,0,0,0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+/* === RESETEO === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-main;
+  background-color: $color-fondo;
+}
+
+/* === LAYOUT PRINCIPAL CON GRID === */
+.grid-contenedor {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+  .grid-item {
+    padding: 20px;
+  }
+}
+
+.header {
+  grid-area: header;
+  background-color: $color-blanco;
+  border-bottom: 2px solid $color-gris;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: $color-blanco;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid $color-gris;
+}
+
+/* === MENÚ ABUELINK === */
+.menu-abuelink,
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-blanco;
+  border-bottom: 2px solid $color-gris;
+  padding: 15px 30px;
+
+  .lista-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $color-texto;
+        font-weight: 700;
+        padding: 10px 15px;
+        border-radius: 8px;
+        @include transition(background-color 0.3s ease, color 0.3s ease);
+
+        &:hover {
+          background-color: $color-gris;
+          color: #000;
+        }
+
+        &.activo {
+          border-bottom: 2px solid $color-morado;
+        }
+      }
+    }
+  }
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: $color-texto;
+}
+
+p {
+  text-align: center;
+  font-size: 1.1em;
+  margin: 20px 0;
+  color: $color-secundario;
+}
+
+/* === BOTÓN FLOTANTE DE WHATSAPP === */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $color-whatsapp;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  @include sombra(0, 2px, 10px, rgba(0,0,0,0.3));
+  text-align: center;
+  z-index: 1000;
+  text-decoration: none;
+  font-size: 24px;
+
+  &:hover {
+    background-color: $color-whatsapp-hover;
+  }
+}
+
+/* === INDEX - LOGO Y FRASE === */
+.logo {
+  width: 200px;
+  margin: 40px auto 0;
+  display: block;
+}
+
+.frase {
+  font-size: 22px;
+  color: $color-morado !important;
+  margin: 30px 0 80px;
+}
+
+/* === BOTÓN PRINCIPAL === */
+.btn-descubre,
+.btn-primary {
+  padding: 12px 25px;
+  background-color: $color-morado !important;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff !important;
+  @include transition(background-color 0.3s ease, transform 0.2s ease);
+
+  &:hover {
+    background-color: $color-morado-oscuro !important;
+    border-color: $color-morado-oscuro !important;
+    transform: scale(1.05);
+  }
+}
+
+/* === BENEFICIOS === */
+.beneficios {
+  .contenido {
+    text-align: center;
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: $color-secundario;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+  }
+
+  .beneficios-galeria {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    img {
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+      border-radius: 15px;
+      @include sombra;
+      @include transition(transform 0.3s ease);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+/* === ACOMPAÑAMIENTO === */
+.acompanamiento {
+  .contenido {
+    padding: 40px 20px;
+    text-align: center;
+
+    h2 {
+      font-size: 28px;
+      color: $color-morado;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+  }
+}
+
+.grid-beneficios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  justify-items: center;
+
+  .tarjeta {
+    background-color: $color-blanco;
+    padding: 20px;
+    border-radius: 15px;
+    @include sombra;
+    text-align: center;
+    max-width: 260px;
+    @include transition(transform 0.3s ease, box-shadow 0.3s ease);
+
+    &:hover {
+      transform: scale(1.05);
+      @include sombra(0, 6px, 20px, rgba(0,0,0,0.2));
+    }
+
+    img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      color: #444;
+    }
+  }
+}
+
+/* === MOTIVACIÓN === */
+.motivacion {
+  .motivacion-contenido {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: $color-blanco;
+    border-radius: 15px;
+    @include sombra;
+
+    h2 {
+      font-size: 28px;
+      color: $color-morado;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .frase-motivacional {
+      margin-top: 30px;
+      font-style: italic;
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-left: 5px solid $color-morado;
+      border-radius: 10px;
+      font-size: 20px;
+      color: $color-texto;
+      @include sombra(0, 4px, 10px, rgba(0,0,0,0.05));
+    }
+  }
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .grid-contenedor {
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .lista-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .frase {
+    font-size: 18px;
+    margin: 20px 0 60px;
+  }
+
+  .beneficios {
+    .contenido {
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+    }
+
+    .beneficios-galeria {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 80%;
+        max-width: 300px;
+      }
+    }
+  }
+
+  .grid-beneficios {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+
+    .tarjeta {
+      width: 100%;
+      max-width: 90%;
+    }
+  }
+}

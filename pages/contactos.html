@@ -15,23 +15,25 @@
 <body>
 
   <div class="container-fluid p-0">
-    <!-- Header con menú -->
-    <header class="bg-white border-bottom">
-      <nav class="navbar navbar-expand-lg navbar-light container">
-        <a class="navbar-brand fw-bold" href="../index.html">AbueLink</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-          aria-controls="menu" aria-expanded="false" aria-label="Menú">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    
+    <!-- Menú de navegación -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="../index.html">AbueLink</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <div class="collapse navbar-collapse" id="menuNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link active" href="beneficios.html">Beneficios</a></li>
+              <li class="nav-item"><a class="nav-link" href="beneficios.html">Beneficios</a></li>
               <li class="nav-item"><a class="nav-link" href="acompañamiento.html">Acompañamiento</a></li>
               <li class="nav-item"><a class="nav-link" href="motivacion.html">Motivación</a></li>
-              <li class="nav-item"><a class="nav-link" href="contactos.html">Contacto</a></li>
+              <li class="nav-item"><a class="nav-link active" href="contactos.html">Contacto</a></li>
             </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -46,16 +48,16 @@
     </main>
 
     <!-- Botón WhatsApp flotante -->
-    <a class="position-fixed bottom-0 end-0 m-4 fs-1 text-decoration-none" 
-       href="https://wa.me/57XXXXXXXXXX" target="_blank" title="Chatea por WhatsApp">
+    <a class="whatsapp-float btn btn-success rounded-circle shadow position-fixed bottom-0 end-0 m-3"
+       href="https://wa.me/573001234567" target="_blank" title="Chatea por WhatsApp">
       💬
     </a>
 
-    <!-- Footer -->
-    <footer class="bg-white border-top text-center py-4">
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
       <h3>Contactar por WhatsApp</h3>
-      <a href="https://wa.me/57XXXXXXXXXX" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 45px;">
+      <a href="https://wa.me/573001234567" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="40">
       </a>
       <p class="mt-2 mb-0">AbueLink - Tecnología con corazón para personas mayores</p>
     </footer>
